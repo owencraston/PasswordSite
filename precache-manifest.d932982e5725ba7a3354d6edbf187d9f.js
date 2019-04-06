@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/PasswordSite/static/js/2.a8e5b393.chunk.js"
   },
   {
-    "revision": "e32f6b1847fe362e1dc0fac21a833d58",
+    "revision": "0279ee2a01fe32af0589749ca555fd6e",
     "url": "/PasswordSite/index.html"
   }
 ];
