@@ -2,7 +2,7 @@
   "name": "password_site",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://StefanoSavvidis.github.io/PasswordSite",
+  "homepage": "https://owencraston.github.io/PasswordSite",
   "dependencies": {
     "antd": "^3.16.1",
     "gh-pages": "^2.0.1",
