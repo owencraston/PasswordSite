@@ -12,4 +12,4 @@ In the terminal, run this command `npm run deploy` OR `yarn run deploy`. This co
 
 
 ### Link:
-- https://stefanosavvidis.github.io/PasswordSite
+- https://owencraston.github.io/PasswordSite
