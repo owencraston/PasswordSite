@@ -12,3 +12,14 @@ var config = {
 firebase.initializeApp(config);
 
 const db = firebase.database();
+
+function writeAttemptData(userId, totalLogins, successfulLogins, failedLogins, averageSuccessTime, averageLoginTime) {
+    db.ref('attempts/' + userId).set({
+      user_id: userId,
+      total_logins: totalLogins,
+      successful_kogins : successfulLogins,
+      failed_logins: failedLogins,
+      average_success_time: averageSuccessTime,
+      average_login_time: averageLoginTime
+    });
+  }
