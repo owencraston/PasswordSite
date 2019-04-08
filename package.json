@@ -5,6 +5,9 @@
   "homepage": "https://owencraston.github.io/PasswordSite",
   "dependencies": {
     "antd": "^3.16.1",
+    "axios": "^0.18.0",
+    "crypto-js": "^3.1.9-1",
+    "firebase": "^5.9.3",
     "gh-pages": "^2.0.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
