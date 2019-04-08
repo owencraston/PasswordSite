@@ -15,10 +15,10 @@ class PasswordConfirmation extends Component {
 
     this.state = {
       client: this.props.client,
-      password: "test",
-      hashed_password: MD5("test")
+      password: "",
+      hashed_password: ""
     };
-    // this.generatePassword();
+    this.generatePassword();
   }
 
   generatePassword() {

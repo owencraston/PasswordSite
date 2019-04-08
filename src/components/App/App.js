@@ -61,15 +61,22 @@ class App extends Component {
     let failedLoginTime = 0;
 
     this.attemptDetails.forEach(attempt => {
+      let successfulAttempt = true;
       if (attempt.attempt === "success") {
         succesfulLogins += 1;
         succesfulLoginTime += attempt.time;
       } else {
         failedLogins += 1;
         failedLoginTime += attempt.time;
+        successfulAttempt = false;
       }
       totalLogins += 1;
       totalLoginTime += attempt.time;
+      db.ref("attempts/" + this.userId).set({
+        user_id: this.userId,
+        time: attempt.time,
+        success: successfulAttempt
+      });
     });
 
     let averageLoginTime = totalLoginTime / totalLogins;
@@ -82,41 +89,15 @@ class App extends Component {
       averageFailedLoginTime = failedLoginTime / failedLogins;
     }
 
-    console.log(
-      "Total Logins: " +
-        totalLogins +
-        ", Total Login Time: " +
-        totalLoginTime +
-        ", Average Login Time: " +
-        averageLoginTime
-    );
-
-    console.log(
-      "Succesful Logins: " +
-        succesfulLogins +
-        ", Succesful Login Time: " +
-        succesfulLoginTime +
-        ", Average Succesful Login Time: " +
-        averageSuccesfulLoginTime
-    );
-
-    console.log(
-      "Failed Logins: " +
-        failedLogins +
-        ", Failed Login Time: " +
-        failedLoginTime +
-        ", Average Failed Login Time: " +
-        averageFailedLoginTime
-    );
-
-    // db.ref('attempts/' + userId).set({
-    //   user_id: userId,
-    //   total_logins: totalLogins,
-    //   successful_logins : successfulLogins,
-    //   failed_logins: failedLogins,
-    //   average_success_time: averageSuccessTime,
-    //   average_login_time: averageLoginTime
-    // });
+    db.ref("summaries/" + this.userId).set({
+      user_id: this.userId,
+      total_logins: totalLogins,
+      successful_logins: succesfulLogins,
+      failed_logins: failedLogins,
+      average_success_time: averageSuccesfulLoginTime,
+      average_login_time: averageLoginTime,
+      average_failed_time: averageFailedLoginTime
+    });
   }
 
   nextScreen() {
