@@ -23,3 +23,11 @@ function writeAttemptData(userId, totalLogins, successfulLogins, failedLogins, a
       average_login_time: averageLoginTime
     });
   }
+
+function writeSummaryData(userId, time, success) {
+  db.ref('summaries/' + userId).set({
+    user_id: userId,
+    time: time,
+    success: success
+  });
+}
