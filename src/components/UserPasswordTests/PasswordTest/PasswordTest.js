@@ -53,6 +53,7 @@ class PasswordTest extends Component {
     const deltaTime = endTime - this.startTime;
     if (!this.compareHashedPassword(hashedCurrentField)) {
       this.props.form.setFields({
+        // eslint-disable-next-line
         ["password"]: { value: "" }
       });
 
@@ -170,6 +171,8 @@ class PasswordTest extends Component {
               key={index}
             />
           );
+          break;
+        default:
           break;
       }
     });

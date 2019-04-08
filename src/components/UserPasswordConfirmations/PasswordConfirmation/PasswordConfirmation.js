@@ -36,7 +36,7 @@ class PasswordConfirmation extends Component {
       lettersMin: "4"
     };
     let password = "";
-    if (this.state.password != "") {
+    if (this.state.password !== "") {
       return;
     }
     axios
