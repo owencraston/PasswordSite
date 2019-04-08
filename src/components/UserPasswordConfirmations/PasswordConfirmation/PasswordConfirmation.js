@@ -15,10 +15,10 @@ class PasswordConfirmation extends Component {
 
     this.state = {
       client: this.props.client,
-      password: "",
-      hashed_password: ""
+      password: "test",
+      hashed_password: MD5("test")
     };
-    this.generatePassword();
+    // this.generatePassword();
   }
 
   generatePassword() {
@@ -100,10 +100,9 @@ class PasswordConfirmation extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    this.generatePassword();
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        message.success("Email Password Saved");
+        message.success(this.props.client + " Password Saved");
         this.props.confirmPassword(MD5(values.password));
       }
     });

@@ -50,6 +50,65 @@ class App extends Component {
 
   saveDataToFirebase() {
     this.dataSaved = true;
+    console.log(this.attemptDetails);
+
+    let totalLogins = 0;
+    let succesfulLogins = 0;
+    let failedLogins = 0;
+
+    let totalLoginTime = 0;
+    let succesfulLoginTime = 0;
+    let failedLoginTime = 0;
+
+    this.attemptDetails.forEach(attempt => {
+      if (attempt.attempt === "success") {
+        succesfulLogins += 1;
+        succesfulLoginTime += attempt.time;
+      } else {
+        failedLogins += 1;
+        failedLoginTime += attempt.time;
+      }
+      totalLogins += 1;
+      totalLoginTime += attempt.time;
+    });
+
+    let averageLoginTime = totalLoginTime / totalLogins;
+    let averageSuccesfulLoginTime = 0;
+    if (succesfulLogins) {
+      averageSuccesfulLoginTime = succesfulLoginTime / succesfulLogins;
+    }
+    let averageFailedLoginTime = 0;
+    if (failedLogins) {
+      averageFailedLoginTime = failedLoginTime / failedLogins;
+    }
+
+    console.log(
+      "Total Logins: " +
+        totalLogins +
+        ", Total Login Time: " +
+        totalLoginTime +
+        ", Average Login Time: " +
+        averageLoginTime
+    );
+
+    console.log(
+      "Succesful Logins: " +
+        succesfulLogins +
+        ", Succesful Login Time: " +
+        succesfulLoginTime +
+        ", Average Succesful Login Time: " +
+        averageSuccesfulLoginTime
+    );
+
+    console.log(
+      "Failed Logins: " +
+        failedLogins +
+        ", Failed Login Time: " +
+        failedLoginTime +
+        ", Average Failed Login Time: " +
+        averageFailedLoginTime
+    );
+
     // db.ref('attempts/' + userId).set({
     //   user_id: userId,
     //   total_logins: totalLogins,
@@ -69,7 +128,6 @@ class App extends Component {
 
   saveHashedPassword(hashedPassword) {
     const { currentScreen } = this.state;
-    console.log(hashedPassword);
     switch (currentScreen) {
       case 0:
         this.setState({
@@ -95,7 +153,10 @@ class App extends Component {
   }
 
   saveAttempts(attemptDetails) {
-    this.attemptDetails.push(attemptDetails);
+    attemptDetails.forEach(attemptDetail => {
+      this.attemptDetails.push(attemptDetail);
+    });
+
     this.setState({
       currentScreen: this.state.currentScreen + 1
     });
@@ -154,7 +215,13 @@ class App extends Component {
     ];
 
     const { currentScreen } = this.state;
-    return <div className="App">{allScreens[currentScreen]}</div>;
+    return (
+      <div className="App">
+        <PageHeader title={"User ID: " + this.userId}>
+          {allScreens[currentScreen]}
+        </PageHeader>
+      </div>
+    );
   }
 }
 
