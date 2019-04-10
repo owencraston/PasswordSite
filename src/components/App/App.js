@@ -1,3 +1,35 @@
+/*
+This file contains a majority of the logic for this site.
+
+class App:
+  is the class where most of the logic lives and will be imported/exported
+
+saveDataToFirebase:
+  this method is where we calculate and store all metrics related to password entry
+  
+  the metrics we are tracking are as follows:
+  totalLogins
+  succesfulLogins
+  failedLogins
+  totalLoginTime
+  succesfulLoginTime
+  failedLoginTime
+
+  we calculate these values dynamically and then store them in firebase with the user_id
+
+nextScreen:
+  simply checks what screen the user is on and then increments it to the next screen and store it in the program state
+
+saveHashedPassword:
+  takes the hashed password and saves it in the state.
+
+saveAttempts:
+  simialr to saveDataToFirebase this function saves the metrics to state
+
+render:
+  renders the ui logic to the site
+
+*/
 import React, { Component } from "react";
 import "./App.css";
 import { PageHeader } from "antd";

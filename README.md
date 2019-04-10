@@ -15,3 +15,7 @@ In the terminal, run this command `npm run deploy` OR `yarn run deploy`. This co
 
 ### Link:
 - http://www.owencraston.com/PasswordSite/
+
+
+## Documentation
+This project is made using React.js adn hosted on github pages. This project was bootsrapped using [Create React App](https://github.com/facebook/create-react-app). Create React App is a tool that genertaes the boilerplate code needed to begin a react project. For this reason some files/code may not be pertinent to this assignment. 

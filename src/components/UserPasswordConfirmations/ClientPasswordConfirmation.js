@@ -1,3 +1,6 @@
+/*
+This file renders the Email password
+*/
 import React, { Component } from "react";
 import { PasswordConfirmation } from "../index";
 // import "./App.css";

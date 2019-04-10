@@ -1,3 +1,20 @@
+/*
+This file tests the passwords with the users
+
+
+compareHashedPassword:
+  checks the password the user input with the saved hashed password. This will return true or false if they match
+
+handleSubmit:
+  Once the user has tested their password this function runs and checks the validity of their test (using the above function). 
+  If the password is correct then the we move on to the next password. If the password is incorrect
+  we subtract from their "lives" and try again.
+  This function also records the metrics related to password testing and reports it to the database.
+
+render:
+  renders ui logic
+
+*/
 import React, { Component } from "react";
 import {
   PageHeader,

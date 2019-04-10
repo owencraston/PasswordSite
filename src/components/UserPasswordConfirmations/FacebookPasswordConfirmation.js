@@ -1,3 +1,6 @@
+/*
+This file renders the Facebook password
+*/
 import React, { Component } from "react";
 import { PasswordConfirmation } from "../index";
 // import "./App.css";

@@ -1,3 +1,16 @@
+/*
+This file generates the passwords for the user
+
+generatePassword:
+  makes a call to the api that generates a random word that is between 4-8 characters in length.
+  the function the strings together the 5 words into a password for the user. This function is called on the confirmation screens.
+
+handleSubmit:
+  checks the fields and handles the logic for the user submitting the password
+
+correctPassword:
+  checks tif the users input is  the correct password and informs them accordingly
+  */
 import React, { Component } from "react";
 import "./PasswordConfirmation.css";
 import { PageHeader, Form, Card, Input, Button, Col, Row, message } from "antd";
