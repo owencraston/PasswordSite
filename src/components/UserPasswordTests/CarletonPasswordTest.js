@@ -1,3 +1,6 @@
+/*
+This file renders the Carleton password test
+*/
 import React, { Component } from "react";
 import { PasswordTest } from "../index";
 

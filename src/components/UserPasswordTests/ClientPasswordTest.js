@@ -1,3 +1,6 @@
+/*
+This file renders the Email password test
+*/
 import React, { Component } from "react";
 import { PasswordTest } from "../index";
 // import "./App.css";
