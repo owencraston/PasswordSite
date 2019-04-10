@@ -1,21 +1,21 @@
 /*
-This file renders the Facebook password
+This file renders the Shopping password
 */
 import React, { Component } from "react";
 import { PasswordConfirmation } from "../index";
 // import "./App.css";
 
-class FacebookPasswordConfirmation extends Component {
+class ShoppingPasswordConfirmation extends Component {
   render() {
     return (
       <PasswordConfirmation
-        client="Facebook"
+        client="Shopping"
         confirmPassword={this.props.confirmPassword}
       />
     );
   }
 }
 
-export default FacebookPasswordConfirmation;
+export default ShoppingPasswordConfirmation;
 
 //site completion method

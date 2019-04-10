@@ -3,9 +3,9 @@ export {
 } from "./ClientPasswordConfirmation";
 
 export {
-  default as CarletonPasswordConfirmation
-} from "./CarletonPasswordConfirmation";
+  default as BankPasswordConfirmation
+} from "./BankPasswordConfirmation";
 
 export {
-  default as FacebookPasswordConfirmation
-} from "./FacebookPasswordConfirmation";
+  default as ShoppingPasswordConfirmation
+} from "./ShoppingPasswordConfirmation";

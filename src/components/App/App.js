@@ -35,14 +35,11 @@ import "./App.css";
 import { PageHeader } from "antd";
 import {
   ClientPasswordConfirmation,
-  CarletonPasswordConfirmation,
-  FacebookPasswordConfirmation,
+  BankPasswordConfirmation,
+  ShoppingPasswordConfirmation,
   ClientPasswordTest
 } from "../index";
-import {
-  CarletonPasswordTest,
-  FacebookPasswordTest
-} from "../UserPasswordTests";
+import { BankPasswordTest, ShoppingPasswordTest } from "../UserPasswordTests";
 
 import * as firebase from "firebase";
 
@@ -69,8 +66,8 @@ class App extends Component {
     this.state = {
       currentScreen: 0,
       emailHashedPassword: "",
-      carletonHashedPassword: "",
-      facebookHashedPassword: ""
+      bankHashedPassword: "",
+      shoppingHashedPassword: ""
     };
   }
 
@@ -150,13 +147,13 @@ class App extends Component {
         break;
       case 1:
         this.setState({
-          carletonHashedPassword: hashedPassword,
+          bankHashedPassword: hashedPassword,
           currentScreen: currentScreen + 1
         });
         break;
       case 2:
         this.setState({
-          facebookHashedPassword: hashedPassword,
+          shoppingHashedPassword: hashedPassword,
           currentScreen: currentScreen + 1
         });
         break;
@@ -182,14 +179,14 @@ class App extends Component {
       />
     );
 
-    const carletonClient = (
-      <CarletonPasswordConfirmation
+    const bankClient = (
+      <BankPasswordConfirmation
         confirmPassword={this.saveHashedPassword.bind(this)}
       />
     );
 
-    const facebookClient = (
-      <FacebookPasswordConfirmation
+    const shoppingClient = (
+      <ShoppingPasswordConfirmation
         confirmPassword={this.saveHashedPassword.bind(this)}
       />
     );
@@ -201,16 +198,16 @@ class App extends Component {
       />
     );
 
-    const carletonTestClient = (
-      <CarletonPasswordTest
-        hashedPassword={this.state.carletonHashedPassword}
+    const bankTestClient = (
+      <BankPasswordTest
+        hashedPassword={this.state.bankHashedPassword}
         storeAttempts={this.saveAttempts.bind(this)}
       />
     );
 
-    const facebookTestClient = (
-      <FacebookPasswordTest
-        hashedPassword={this.state.facebookHashedPassword}
+    const shoppingTestClient = (
+      <ShoppingPasswordTest
+        hashedPassword={this.state.shoppingHashedPassword}
         storeAttempts={this.saveAttempts.bind(this)}
       />
     );
@@ -219,11 +216,11 @@ class App extends Component {
 
     const allScreens = [
       emailClient,
-      carletonClient,
-      facebookClient,
+      bankClient,
+      shoppingClient,
       emailTestClient,
-      carletonTestClient,
-      facebookTestClient,
+      bankTestClient,
+      shoppingTestClient,
       finalScreen
     ];
 

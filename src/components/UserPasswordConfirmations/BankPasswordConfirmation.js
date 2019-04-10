@@ -1,21 +1,21 @@
 /*
-This file renders the Carleton password
+This file renders the Bank password
 */
 import React, { Component } from "react";
 import { PasswordConfirmation } from "../index";
 // import "./App.css";
 
-class CarletonPasswordConfirmation extends Component {
+class BankPasswordConfirmation extends Component {
   render() {
     return (
       <PasswordConfirmation
-        client="Carleton"
+        client="Bank"
         confirmPassword={this.props.confirmPassword}
       />
     );
   }
 }
 
-export default CarletonPasswordConfirmation;
+export default BankPasswordConfirmation;
 
 //site completion method

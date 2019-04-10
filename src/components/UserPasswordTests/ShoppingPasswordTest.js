@@ -1,14 +1,14 @@
 /*
-This file renders the Carleton password test
+This file renders the Shopping password test
 */
 import React, { Component } from "react";
 import { PasswordTest } from "../index";
 
-class CarletonPasswordTest extends Component {
+class ShoppingPasswordTest extends Component {
   render() {
     return (
       <PasswordTest
-        client="Carleton"
+        client="Shopping"
         hashedPassword={this.props.hashedPassword}
         storeAttempts={this.props.storeAttempts}
       />
@@ -16,4 +16,4 @@ class CarletonPasswordTest extends Component {
   }
 }
 
-export default CarletonPasswordTest;
+export default ShoppingPasswordTest;

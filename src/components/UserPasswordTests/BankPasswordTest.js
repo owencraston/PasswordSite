@@ -1,14 +1,14 @@
 /*
-This file renders the Facebook password test
+This file renders the Bank password test
 */
 import React, { Component } from "react";
 import { PasswordTest } from "../index";
 
-class FacebookPasswordTest extends Component {
+class BankPasswordTest extends Component {
   render() {
     return (
       <PasswordTest
-        client="Facebook"
+        client="Bank"
         hashedPassword={this.props.hashedPassword}
         storeAttempts={this.props.storeAttempts}
       />
@@ -16,4 +16,4 @@ class FacebookPasswordTest extends Component {
   }
 }
 
-export default FacebookPasswordTest;
+export default BankPasswordTest;
